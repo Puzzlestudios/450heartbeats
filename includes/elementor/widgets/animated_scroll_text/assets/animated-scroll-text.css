@@ -1,0 +1,13 @@
+.hb-animated-scroll-text .hb-ast-word {
+	display: inline;
+	color: var(--hb-ast-dim, rgba(128, 128, 128, 0.2));
+	transition: color var(--hb-ast-duration, 0.4s) ease;
+}
+
+.hb-animated-scroll-text .hb-ast-word.on {
+	color: var(--hb-ast-active, currentColor);
+}
+
+.hb-animated-scroll-text .hb-ast-word.hb-ast-hl.on {
+	color: var(--hb-ast-accent, #ff2442);
+}

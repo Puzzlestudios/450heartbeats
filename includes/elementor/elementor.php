@@ -2,6 +2,7 @@
 namespace HeartbeatsChild\Elementor;
 
 use HeartbeatsChild\Elementor\Widgets\Space_Animation\Space_Animation;
+use HeartbeatsChild\Elementor\Widgets\Animated_Scroll_Text\Animated_Scroll_Text;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -20,5 +21,6 @@ class Elementor extends \Heartbeats\Elementor\Elementor {
 
 	function initElementorModules() {
 		new Space_Animation();
+		new Animated_Scroll_Text();
 	}
 }
