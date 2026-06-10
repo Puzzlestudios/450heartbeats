@@ -205,7 +205,6 @@
     width: clamp(300px, 40vw, 620px);
     pointer-events: none;
     will-change: transform;
-    transform: translate(calc(-50% + 26vw), calc(-50% - 22vh)) rotate(160deg) scale(.5)
 }
 
 #story#story #astroWrap img,

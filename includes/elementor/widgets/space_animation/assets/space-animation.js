@@ -75,6 +75,9 @@ if (!reduced && window.gsap) {
         passive: true
     });
 
+    /* Initialzustand: GSAP übernimmt transform vollständig */
+    gsap.set('#astroWrap', { xPercent: -50, yPercent: -50, x: '26vw', y: '-22vh', rotate: 160, scale: 0.5 });
+
     /* ========== HERO-STORY-TIMELINE (gepinnt, scrub) ==========
        Akt 1 (0–.3): verlorener, taumelnder Astronaut
        Akt 2 (.3–.62): Leine zeichnet sich, fängt ihn, stabilisiert
@@ -107,8 +110,6 @@ if (!reduced && window.gsap) {
                     duration: .18
                 }
             ],
-            xPercent: -50,
-            yPercent: -50,
             ease: 'none'
         }, 0)
         /* Akt-1-Text raus */
