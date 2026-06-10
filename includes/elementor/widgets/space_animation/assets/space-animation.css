@@ -1,0 +1,272 @@
+:root {
+    --space: #05060F;
+    --panel: #0B0E1E;
+    --panel-2: #12152B;
+    --ink: #FFFFFF;
+    --muted: #9BA0B5;
+    --signal: #FF2442;
+    --signal-soft: #FF5C72;
+    --nebula: #6E3BFF;
+    --hairline: rgba(255, 255, 255, .08);
+    --grad-nebula: linear-gradient(120deg, #FF2442 0%, #A82BCE 55%, #6E3BFF 100%);
+}
+#story#story {
+    position: relative;
+    height: 100svh;
+    overflow: visible;
+}
+
+#story#story #stars {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0
+}
+
+#story#story .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 1
+}
+
+#story#story .glow.red {
+    width: 55vw;
+    height: 55vw;
+    right: -18vw;
+    top: -12vw;
+    opacity: .28;
+    background: radial-gradient(circle, #FF2442 0%, transparent 65%)
+}
+
+#story#story .glow.violet {
+    width: 42vw;
+    height: 42vw;
+    left: -14vw;
+    bottom: -16vw;
+    opacity: .3;
+    background: radial-gradient(circle, #6E3BFF 0%, transparent 65%)
+}
+
+/* Akt-Texte */
+#story#story .stage {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 3;
+    padding: 0 5vw;
+    pointer-events: none
+}
+
+#story#story .stage h2 {
+    color: #ffffff;
+    font-size: clamp(2.4rem, 8vw, 7rem);
+    line-height: 1;
+    text-transform: uppercase
+}
+
+#story#story .stage .dot {
+    color: var(--signal)
+}
+
+#story#story #t1 {
+    opacity: 1
+}
+
+#story#story #t2 {
+    opacity: 0
+}
+
+#story#story .stage .hint {
+    display: block;
+    margin-top: 30px;
+    font-size: 11px;
+    letter-spacing: .4em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500
+}
+
+/* Finale: Marke */
+#story#story #brand {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    padding: 0 clamp(20px, 6vw, 80px);
+    opacity: 0;
+    pointer-events: none
+}
+
+#story#story #brand.live {
+    pointer-events: auto
+}
+
+#story#story #brand .inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    width: 100%
+}
+
+#story#story .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: .4em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 26px
+}
+
+#story#story .eyebrow::before {
+    content: "";
+    width: 36px;
+    height: 1px;
+    background: var(--signal)
+}
+
+#story#story #brand h1 {
+    color: #ffffff;
+    font-size: clamp(3.2rem, 10vw, 9rem);
+    line-height: .9;
+    text-transform: uppercase
+}
+
+#story#story #brand .sub {
+    margin-top: 30px;
+    max-width: 520px;
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    line-height: 1.65;
+    color: var(--muted)
+}
+
+#story#story .actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap
+}
+
+#story#story .btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 17px 34px;
+    border-radius: 99px;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: .03em;
+    transition: .35s;
+    will-change: transform
+}
+
+#story#story .btn-primary {
+    background: var(--signal);
+    color: #fff;
+    box-shadow: 0 8px 32px rgba(255, 36, 66, .35)
+}
+
+#story#story .btn-primary:hover {
+    box-shadow: 0 12px 44px rgba(255, 36, 66, .55)
+}
+
+#story#story .btn-primary .arrow {
+    transition: transform .35s
+}
+
+#story#story .btn-primary:hover .arrow {
+    transform: translateX(5px)
+}
+
+#story#story .btn-ghost {
+    border: 1px solid rgba(255, 255, 255, .25);
+    color: #fff
+}
+
+#story#story .btn-ghost:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, .06)
+}
+
+/* Astronaut */
+#story#story #astroWrap {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    width: clamp(300px, 40vw, 620px);
+    pointer-events: none;
+    will-change: transform;
+    transform: translate(calc(-50% + 26vw), calc(-50% - 22vh)) rotate(160deg) scale(.5)
+}
+
+#story#story #astroWrap img,
+#story#story #landAstro img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 0 rgba(255, 36, 66, 0))
+}
+
+@media(max-width:760px) {
+    #story#story #astroWrap {
+        width: 72vw;
+        opacity: .5;
+        z-index: 2
+    }
+}
+
+#story#story #astroWrap svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 0 rgba(255, 36, 66, 0))
+}
+
+#story#story #catchGlow {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    width: 46vw;
+    height: 46vw;
+    transform: translate(-50%, -50%) scale(.4);
+    opacity: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(255, 36, 66, .32) 0%, transparent 60%);
+    filter: blur(30px)
+}
+
+/* Rettungsleine (Heartbeat) */
+#story#story #lifeline {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 120px;
+    z-index: 2;
+    transform: translateY(-50%);
+    pointer-events: none
+}
+
+#story#story #lifeline path {
+    stroke: url(#lifeGrad);
+    stroke-width: 2.5;
+    fill: none;
+    stroke-dasharray: 2400;
+    stroke-dashoffset: 2400;
+    filter: drop-shadow(0 0 7px rgba(255, 36, 66, .7))
+}
+
+#story#story .outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, .85);
+}
