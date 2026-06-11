@@ -24,11 +24,13 @@ function child_scripts() {
     wp_enqueue_script( 'HEARTBEATS_CHILD_FUNCTIONS', get_stylesheet_directory_uri() .'/assets/js/functions.js' , array('jquery') );
 
     /**
-     * Add custom CSS files
+     * Add custom files
      */
     wp_enqueue_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js' , array('jquery') );
     wp_enqueue_script( 'gsap-scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js' , array('gsap') );
-    wp_enqueue_script( 'select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.full.min.js' , array('gsap') );
+    wp_enqueue_script( 'select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.full.min.js' , array('jquery') );
+
+    wp_enqueue_script( 'gsap_utils', get_stylesheet_directory_uri() .'/assets/js/gsap_utils.js' , array('gsap-scrolltrigger') );
 }
 
 /**
