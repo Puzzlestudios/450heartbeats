@@ -26,10 +26,10 @@ function child_scripts() {
     /**
      * Add custom files
      */
-   wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array('jquery'), null, true);
-    wp_enqueue_script('gsap-scrolltrigger', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array('gsap'), null, true);
+   wp_enqueue_script('gsap', get_stylesheet_directory_uri().'/assets/js/gsap.min.js', array('jquery'), null, true);
+    wp_enqueue_script('gsap-scrolltrigger', get_stylesheet_directory_uri().'/assets/js/ScrollTrigger.min.js', array('gsap'), null, true);
     wp_enqueue_script('gsap_utils', get_stylesheet_directory_uri().'/assets/js/gsap_utils.js', array('gsap-scrolltrigger'), null, true);
-    
+
     wp_enqueue_script( 'select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.full.min.js' , array('jquery') );
 
 }
