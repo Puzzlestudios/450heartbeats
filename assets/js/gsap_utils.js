@@ -1,4 +1,9 @@
+
 window.GSAPUtils = (function() {
+    // Direkt nach window.GSAPUtils = (function() {
+    window._gsap = window.gsap;
+    window._ST = window.ScrollTrigger;
+
     const cache = {
         rem: null,
         remTimestamp: 0,
