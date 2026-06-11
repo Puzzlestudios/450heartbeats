@@ -1,3 +1,8 @@
+if (window.window && window.window !== window) {
+  window.window.gsap = window.gsap;
+  window.window.ScrollTrigger = window.ScrollTrigger;
+}
+
 window.GSAPUtils = (function() {
 
   function viewportH() {
