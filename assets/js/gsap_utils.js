@@ -1,10 +1,14 @@
-if (window.window && window.window !== window) {
-  window.window.gsap = window.gsap;
-  window.window.ScrollTrigger = window.ScrollTrigger;
-}
-
 window.GSAPUtils = (function() {
-
+  // GSAP UMD-Fix
+  if (window.window && window.window.gsap) {
+    window.gsap = window.window.gsap;
+  }
+  if (window.window && window.window.ScrollTrigger) {
+    window.ScrollTrigger = window.window.ScrollTrigger;
+  }
+  if (window.gsap && window.ScrollTrigger) {
+    window.gsap.registerPlugin(window.ScrollTrigger);
+  }
   function viewportH() {
     return window.visualViewport?.height || window.innerHeight;
   }
