@@ -1,8 +1,16 @@
 
 window.GSAPUtils = (function() {
-    // Direkt nach window.GSAPUtils = (function() {
-    window._gsap = window.gsap;
-    window._ST = window.ScrollTrigger;
+    // ScrollTrigger inline registrieren bevor alles andere läuft
+    if (window.gsap && !window.ScrollTrigger) {
+        // ScrollTrigger via fetch nachladen und eval — EINMALIG
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', false);
+        xhr.send();
+        eval(xhr.responseText);
+    }
+    if (window.gsap && window.ScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+    }
 
     const cache = {
         rem: null,
